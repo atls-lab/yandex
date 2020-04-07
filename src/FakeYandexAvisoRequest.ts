@@ -1,5 +1,5 @@
-import crypto from 'crypto'
-import nodeFetch from 'node-fetch'
+import crypto                            from 'crypto'
+import nodeFetch                         from 'node-fetch'
 
 import { FakeYandexAvisoRequestOptions } from './interfaces'
 

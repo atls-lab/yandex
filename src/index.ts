@@ -1,4 +1,5 @@
-import { Command, flags } from '@oclif/command'
+import { Command, flags }         from '@oclif/command'
+
 import { FakeYandexAvisoRequest } from './FakeYandexAvisoRequest'
 
 class MakePurchaseCommand extends Command {
