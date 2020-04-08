@@ -1,9 +1,10 @@
+import fs                         from 'fs'
 import { Command, flags }         from '@oclif/command'
 
 import { FakeYandexAvisoRequest } from './FakeYandexAvisoRequest'
 
 class MakePurchaseCommand extends Command {
-  public static description = 'describe the command here'
+  public static description = 'makes a fake payment request'
 
   public static flags = {
     version: flags.version({ char: 'v' }),
@@ -28,16 +29,22 @@ class MakePurchaseCommand extends Command {
       description: 'payment amount',
       required: true,
     }),
+    filePath: flags.string({
+      char: 'f',
+      description: 'JSON file with fake data',
+      required: true,
+    }),
   }
 
   public async run() {
     const parseOutput = this.parse(MakePurchaseCommand)
 
-    const { url, secret, purchaseId, orderSumAmount } = parseOutput.flags
+    const { url, secret, purchaseId, orderSumAmount, filePath } = parseOutput.flags
 
     const requestParams = { url, secret, purchaseId, orderSumAmount }
+    const fakePayment = JSON.parse(fs.readFileSync(filePath, 'utf8'))
 
-    await new FakeYandexAvisoRequest(requestParams).execute()
+    await new FakeYandexAvisoRequest(requestParams, fakePayment).execute()
 
     this.log('💩 ОK!')
   }
