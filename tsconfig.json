@@ -1,4 +1,7 @@
 {
-  "extends": "@monstrs/tsconfig/tsconfig.lib.json",
+  "extends": "@monstrs/tsconfig/tsconfig.service.json",
+  "compilerOptions": {
+    "outDir": "./lib"
+  },
   "include": ["src/**/*"]
 }
