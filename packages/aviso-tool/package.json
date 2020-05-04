@@ -24,6 +24,7 @@
     "tslib": "^1"
   },
   "devDependencies": {
+    "@monstrs/publish-flow": "0.1.3",
     "@monstrs/mctl": "^0.1.82",
     "@oclif/dev-cli": "^1",
     "@types/node": "^13.11.0",
