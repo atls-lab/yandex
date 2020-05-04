@@ -6,7 +6,7 @@
   "main": "index.js",
   "files": [
     "/bin",
-    "/lib"
+    "/dist"
   ],
   "scripts": {
     "clean": "rm -r -f dist",
@@ -16,7 +16,7 @@
     "prepack": "pubflow store",
     "postpack": "pubflow restore"
   },
-  "peerDependencies": {
+  "dependencies": {
     "@oclif/command": "^1",
     "@oclif/config": "^1",
     "@oclif/plugin-help": "^2",
