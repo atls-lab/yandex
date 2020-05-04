@@ -1,51 +1,28 @@
 {
-  "name": "yandex-aviso-tool",
-  "version": "0.0.0",
-  "bin": {
-    "yandex-aviso-tool": "./bin/run"
-  },
-  "bugs": "https://github.com/https://github.com/Beatster/yandex-aviso-tool.git/issues",
-  "dependencies": {
-    "@oclif/command": "^1",
-    "@oclif/config": "^1",
-    "@oclif/plugin-help": "^2",
-    "node-fetch": "^2.6.0",
-    "tslib": "^1"
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "lint": "mctl lint",
+    "test": "mctl test",
+    "commit": "mctl commit",
+    "format": "mctl format",
+    "typecheck": "mctl typecheck",
+    "checkcommit": "mctl precommit",
+    "build": "lerna run build"
   },
   "devDependencies": {
     "@monstrs/mctl": "^0.1.82",
-    "@oclif/dev-cli": "^1",
-    "@types/node": "^13.11.0",
-    "@types/node-fetch": "^2.5.5",
-    "ts-node": "^8",
-    "typescript": "^3.3"
+    "husky": "4.2.3",
+    "lerna": "3.20.2",
+    "typescript": "3.7.5"
   },
-  "engines": {
-    "node": ">=8.0.0"
-  },
-  "files": [
-    "/bin",
-    "/lib"
+  "workspaces": [
+    "packages/**/*"
   ],
-  "homepage": "https://github.com/https://github.com/Beatster/yandex-aviso-tool.git",
-  "keywords": [
-    "oclif"
-  ],
-  "license": "MIT",
-  "main": "index.js",
-  "oclif": {
-    "bin": "yandex-aviso-tool"
-  },
-  "repository": "https://github.com/Beatster/yandex-aviso-tool.git",
-  "scripts": {
-    "commit": "mctl commit",
-    "lint": "mctl lint",
-    "typecheck": "mctl typecheck",
-    "format": "mctl format",
-    "prepublishOnly": "yarn run format && yarn run lint && yarn run typecheck",
-    "prepack": "rm -rf lib && tsc -b && oclif-dev readme",
-    "test": "echo NO TESTS",
-    "version": "oclif-dev readme && git add README.md"
-  },
-  "types": "lib/index.d.ts"
+  "husky": {
+    "hooks": {
+      "pre-commit": "mctl precommit",
+      "commit-msg": "mctl commitmsg"
+    }
+  }
 }

@@ -50,4 +50,4 @@ class MakePurchaseCommand extends Command {
   }
 }
 
-export = MakePurchaseCommand
+export default MakePurchaseCommand
