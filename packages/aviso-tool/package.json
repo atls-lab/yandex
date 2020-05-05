@@ -1,7 +1,7 @@
 {
   "name": "@atlantis-lab/yandex-aviso-tool",
   "repository": "git://github.com/Atlantis-Lab/yandex-aviso-tool.git",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "license": "MIT",
   "main": "index.js",
   "files": [
@@ -24,8 +24,8 @@
     "tslib": "^1"
   },
   "devDependencies": {
-    "@monstrs/publish-flow": "0.1.3",
     "@monstrs/mctl": "^0.1.82",
+    "@monstrs/publish-flow": "0.1.3",
     "@oclif/dev-cli": "^1",
     "@types/node": "^13.11.0",
     "@types/node-fetch": "^2.5.5",
