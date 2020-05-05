@@ -1,4 +1,4 @@
 {
-  "extends": "@monstrs/tsconfig/tsconfig.lib.json",
-  "include": ["src/**/*"]
+  "extends": "@monstrs/tsconfig/tsconfig.base.json",
+  "include": ["packages/**/**/*"]
 }
