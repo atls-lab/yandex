@@ -50,4 +50,5 @@ class MakePurchaseCommand extends Command {
   }
 }
 
+// @ts-ignore
 export = MakePurchaseCommand

@@ -1,7 +1,4 @@
 {
-  "extends": "@monstrs/tsconfig/tsconfig.service.json",
-  "compilerOptions": {
-    "outDir": "./lib"
-  },
-  "include": ["src/**/*"]
+  "extends": "@monstrs/tsconfig/tsconfig.base.json",
+  "include": ["packages/**/**/*"]
 }
