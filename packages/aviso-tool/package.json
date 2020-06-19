@@ -19,7 +19,7 @@
   "dependencies": {
     "@oclif/command": "^1",
     "@oclif/config": "^1",
-    "@oclif/plugin-help": "^2",
+    "@oclif/plugin-help": "^3.0.0",
     "node-fetch": "^2.6.0",
     "tslib": "^2.0.0"
   },
