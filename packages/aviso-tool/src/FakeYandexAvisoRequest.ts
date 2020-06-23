@@ -1,12 +1,14 @@
-import crypto                            from 'crypto'
-import nodeFetch                         from 'node-fetch'
+import crypto                                   from 'crypto'
+import nodeFetch                                from 'node-fetch'
+import { Agent }                                from 'https'
 
-import { FakeYandexAvisoRequestOptions } from './interfaces'
+import { FakeYandexAvisoRequestOptions, Maybe } from './interfaces'
 
 export class FakeYandexAvisoRequest {
   public constructor(
     private readonly options: FakeYandexAvisoRequestOptions,
-    private readonly defaultParams: any
+    private readonly defaultParams: any,
+    private readonly customAgent: Maybe<Agent> = null
   ) {}
 
   public async execute() {
@@ -26,6 +28,7 @@ export class FakeYandexAvisoRequest {
         'Content-Type': 'application/json',
       },
       method: 'POST',
+      agent: this.customAgent,
     })
   }
 
