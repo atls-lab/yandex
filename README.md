@@ -2,16 +2,21 @@
 
 # Usage
 
-````sh-session
+```sh-session
 $ npm install -g yandex-aviso-tool
+$ yandex-aviso-tool --help
 $  s (required) - Secret word used to sign the request
    u (required) - Server url
    p (required) - Purchase identifier
    o (required) - Payment amount
    f (required) - path to fake data file (.json)
-$ yandex-aviso-tool --help
 
-example
+$ yandex-aviso-tool -s secret -u localhost -p 7321 -o 1490 -
+f file.json
+```
+
+# Example fake data file
+
 ```json
 {
   "sk": "sk",
@@ -54,12 +59,4 @@ example
   "orderSumCurrencyPaycash": "643",
   "wbp_shopadditionaladdresses": "wc2.yamoney.ru:8128"
 }
-
-````
-
-\$ yandex-aviso-tool -s secret -u localhost -p 7321 -o 1490 -
-f file.json
-
-```
-
 ```
