@@ -1,4 +1,6 @@
-import fs                         from 'fs'
+import { Agent }                  from 'https'
+import { readFileSync }           from 'fs'
+
 import { Command, flags }         from '@oclif/command'
 
 import { FakeYandexAvisoRequest } from './FakeYandexAvisoRequest'
@@ -37,14 +39,17 @@ class MakePurchaseCommand extends Command {
   }
 
   public async run() {
-    const parseOutput = this.parse(MakePurchaseCommand)
-
-    const { url, secret, purchaseId, orderSumAmount, filePath } = parseOutput.flags
+    const {
+      flags: { url, secret, purchaseId, orderSumAmount, filePath },
+    } = this.parse(MakePurchaseCommand)
 
     const requestParams = { url, secret, purchaseId, orderSumAmount }
-    const fakePayment = JSON.parse(fs.readFileSync(filePath, 'utf8'))
+    const fakePayment = JSON.parse(readFileSync(filePath, 'utf8'))
+    const agent = new Agent({ rejectUnauthorized: false })
 
-    await new FakeYandexAvisoRequest(requestParams, fakePayment).execute()
+    const fakeRequest = new FakeYandexAvisoRequest(requestParams, fakePayment, agent)
+
+    await fakeRequest.execute()
 
     this.log('💩 ОK!')
   }

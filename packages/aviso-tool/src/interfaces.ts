@@ -4,3 +4,5 @@ export interface FakeYandexAvisoRequestOptions {
   readonly purchaseId: number
   readonly orderSumAmount: number
 }
+
+export type Maybe<T> = T | null
