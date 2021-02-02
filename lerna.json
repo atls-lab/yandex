@@ -1,15 +1,14 @@
 {
-  "lerna": "3.20.2",
   "packages": ["packages/*"],
   "npmClient": "yarn",
   "useWorkspaces": true,
   "version": "independent",
   "command": {
     "version": {
-      "allowBranch": "chore/release",
+      "allowBranch": "master",
       "conventionalCommits": true,
       "exact": true,
-      "message": "chore(release): %s"
+      "message": "chore(release): publish"
     }
   }
 }
